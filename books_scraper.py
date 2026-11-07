@@ -10,18 +10,18 @@ from urllib.parse import urljoin
 # Website URL
 base_url = "https://books.toscrape.com/"
 
-# Create a session
+# Creating a session
 session = requests.Session()
 
 session.headers.update({
     "User-Agent": "Mozilla/5.0"
 })
 
-# Store all scraped books
+# Storing all scraped books
 books_data = []
 
 
-# Scrape the first 5 catalogue pages
+# Scraping the first 5 catalogue pages
 for page_number in range(1, 6):
 
     page_url = urljoin(
@@ -41,7 +41,7 @@ for page_number in range(1, 6):
     print("Books found on this page:", len(books))
 
 
-    # Visit each book on the current page
+    # Visiting each book on the current page
     for book in books:
 
         # Book name
@@ -76,7 +76,7 @@ for page_number in range(1, 6):
             book_link
         )
 
-        # Visit individual book page
+        # Visiting individual book page
         product_response = session.get(
             product_url,
             timeout=30
@@ -127,7 +127,7 @@ for page_number in range(1, 6):
 
             product_information[key] = value
 
-        # Save book information
+        # Saving book information
         books_data.append({
 
             "Book Name": name,
@@ -150,14 +150,13 @@ for page_number in range(1, 6):
         time.sleep(0.2)
 
 
-# Convert scraped data into a DataFrame
+# Converting scraped data into a DataFrame
 df = pd.DataFrame(books_data)
 
 
 # Display results
-print("\n************************")
 print("BOOK SCRAPING COMPLETED")
-print("**************************")
+
 
 print("Total books scraped:", len(df))
 
