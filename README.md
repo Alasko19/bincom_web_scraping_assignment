@@ -80,7 +80,7 @@ Installation and Setup
 
 1. Clone the repository
 
-git clone YOUR_GITHUB_REPOSITORY_URL
+git clone 
 
 2. Navigate into the project folder
 
