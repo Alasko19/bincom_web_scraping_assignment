@@ -80,7 +80,7 @@ Installation and Setup
 
 1. Clone the repository
 
-git clone 
+git clone https://github.com/Alasko19/bincom_web_scraping_assignment.git
 
 2. Navigate into the project folder
 
